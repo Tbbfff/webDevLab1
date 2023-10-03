@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
-
 app.use(express.static('public'));
+
 app.get('/download', (req, res) => {
   const pdfFilePath = path.join(__dirname, 'public', 'resume2023October02.pdf');
   res.download(pdfFilePath, 'resume.pdf', (err) => {
